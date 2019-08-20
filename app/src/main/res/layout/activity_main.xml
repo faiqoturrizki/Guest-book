@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/gmbr"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/rs"/>
+
+            <TextView
+                android:id="@+id/judul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guest Book"
+                android:textSize="60dp"
+                android:textColor="@color/purple"
+                android:layout_marginTop="10dp"
+                android:fontFamily="cursive"/>
+
+            <EditText
+                android:id="@+id/nama"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="Nama"
+                android:layout_marginTop="100dp"/>
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:layout_marginTop="10dp"/>
+
+            <EditText
+                android:id="@+id/hp"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="No Telepon"
+                android:layout_marginTop="10dp"/>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/tanggal"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Tanggal"/>
+
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/kalender"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/tambah"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="TAMBAH"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:background="@drawable/custom_button"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
