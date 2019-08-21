@@ -20,7 +20,8 @@
                 android:id="@+id/gmbr"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/rs"/>
+                android:src="@drawable/rs"
+                android:layout_marginTop="50dp"/>
 
             <TextView
                 android:id="@+id/judul"
@@ -36,22 +37,25 @@
                 android:id="@+id/nama"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:hint="Nama"
-                android:layout_marginTop="100dp"/>
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/email"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:hint="Email"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="10dp"
+                android:inputType="textEmailAddress"/>
 
             <EditText
-                android:id="@+id/hp"
+                android:id="@+id/alamat"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:hint="No Telepon"
-                android:layout_marginTop="10dp"/>
+                android:hint="Alamat"
+                android:layout_marginTop="10dp"
+                android:inputType="text"/>
 
             <LinearLayout
                 android:layout_width="300dp"
@@ -62,7 +66,8 @@
                     android:id="@+id/tanggal"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
-                    android:hint="Tanggal"/>
+                    android:hint="Tanggal"
+                    android:enabled="false"/>
 
                 <ImageView
                     android:id="@+id/img"
@@ -70,7 +75,15 @@
                     android:layout_height="50dp"
                     android:src="@drawable/kalender"/>
 
+
             </LinearLayout>
+
+            <EditText
+                android:id="@+id/ket"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="Keterangan"
+                android:inputType="text"/>
 
             <Button
                 android:id="@+id/tambah"
