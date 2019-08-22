@@ -24,21 +24,18 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-    EditText etnama,etemail,etalamat,ettanggal,etketerangan;
-    ImageView imageView;
+    EditText etnama, etemail, etalamat, etketerangan;
     Button bttambah;
-
 
 
     DatePickerDialog datePickerDialog;
     MainURL mainURL;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mainURL = new MainURL();
-        imageView = findViewById(R.id.img);
-        ettanggal = findViewById(R.id.tanggal);
         etnama = findViewById(R.id.nama);
         etemail = findViewById(R.id.email);
         etalamat = findViewById(R.id.alamat);
@@ -50,47 +47,28 @@ public class MainActivity extends AppCompatActivity {
                 senddata();
             }
         });
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showdatepicker();
-            }
-        });
+        {
+
+        }
     }
 
     private void senddata() {
-        String nama,email,alamat,tanggal,keterangan;
+        String nama, email, alamat, tanggal, keterangan;
         nama = etnama.getText().toString();
         email = etemail.getText().toString();
         alamat = etalamat.getText().toString();
-        tanggal = ettanggal.getText().toString();
         keterangan = etketerangan.getText().toString();
-        tambahdata(nama,email,alamat,tanggal,keterangan);
+        tambahdata(nama, email, alamat, keterangan);
     }
 
-    private void showdatepicker() {
-        final Calendar newCalendar = Calendar.getInstance();
-        datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-
-            @Override
-            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-
-                Calendar newDate = Calendar.getInstance();
-                newDate.set(year, monthOfYear, dayOfMonth);
-                String formatTanggal = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).format(newCalendar.getTime());
-
-                ettanggal.setText(formatTanggal);
-            }
-
-        },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
-        datePickerDialog.show();
-    }
-    void tambahdata(String nama, String email, String alamat, String tanggal, String keterangan){
-        mainURL.getAPI().getTamu(nama,alamat,email,tanggal,keterangan).enqueue(new Callback<Tamu>() {
+    void tambahdata(String nama, String email, String alamat, String keterangan) {
+        mainURL.getAPI().getTamu(nama, alamat, email, keterangan).enqueue(new Callback<Tamu>() {
             @Override
             public void onResponse(Call<Tamu> call, Response<Tamu> response) {
-                if (response.isSuccessful()){
-                    Toast.makeText(MainActivity.this,"BERHASIL",Toast.LENGTH_SHORT).show();
+                if (response.isSuccessful()) {
+                    Intent intent = new Intent(MainActivity.this,FinishActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
             }
 
@@ -101,3 +79,4 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+

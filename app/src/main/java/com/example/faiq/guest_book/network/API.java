@@ -14,7 +14,6 @@ public interface API {
             @Field("nama") String nama,
             @Field("alamat") String alamat,
             @Field("email") String email,
-            @Field("tanggal") String tanggal,
             @Field("keterangan") String keterangan
     );
 }
