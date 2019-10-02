@@ -4,5 +4,9 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="blue">#13C4CA</color>
-    <color name="purple">#8D6C9F</color>
+    <color name="peach">#EB8E8E</color>
+    <color name="yellow">#FFCA4F</color>
+    <color name="orange">#E8B746</color>
+    <color name="putih">#ffffff</color>
+    <color name="abu">#CAC7C7</color>
 </resources>

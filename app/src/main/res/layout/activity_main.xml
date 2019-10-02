@@ -6,77 +6,163 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/custom_background">
+
+    <ImageView
+        android:id="@+id/gmbr"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/library"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/judul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guest Book"
+        android:textSize="30sp"
+        android:textColor="@color/putih"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/gmbr"
+        android:layout_centerHorizontal="true"/>
+
 
     <ScrollView
+        android:id="@+id/scroll"
+        android:layout_centerInParent="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/judul">
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
+            android:layout_height="wrap_content">
+        <android.support.v7.widget.CardView
+            app:cardCornerRadius="15dp"
+            android:id="@+id/cardform"
+            android:layout_margin="20dp"
+            app:cardBackgroundColor="@color/putih"
             android:gravity="center_horizontal"
-            android:layout_height="match_parent">
-            <ImageView
-                android:id="@+id/gmbr"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/rs"
-                android:layout_marginTop="50dp"/>
+            android:layout_width="match_parent"
+            android:layout_height="350dp">
+            <LinearLayout
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/judul"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Guest Book"
-                android:textSize="60dp"
-                android:textColor="@color/purple"
-                android:layout_marginTop="10dp"
-                android:fontFamily="cursive"/>
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:layout_width="325dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/custom_edittext">
 
-            <EditText
-                android:id="@+id/nama"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
+                    <ImageView
+                        android:layout_margin="10dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/info"/>
+
+                <EditText
+                    android:layout_margin="10dp"
+                    android:id="@+id/ket"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Keterangan"
+                    android:inputType="text"
+                    android:background="@null" />
+                </LinearLayout>
+
+            <LinearLayout
                 android:layout_marginTop="30dp"
-                android:hint="Nama"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/email"
-                android:layout_width="300dp"
+                android:gravity="center_vertical"
+                android:layout_width="325dp"
                 android:layout_height="wrap_content"
-                android:hint="Email"
-                android:layout_marginTop="10dp"
-                android:inputType="textEmailAddress"/>
+                android:orientation="horizontal"
+                android:background="@drawable/custom_edittext">
+                <ImageView
+                    android:layout_margin="10dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/user"/>
 
-            <EditText
-                android:id="@+id/alamat"
-                android:layout_width="300dp"
+                <EditText
+                    android:layout_margin="10dp"
+                    android:id="@+id/nama"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Nama"
+                    android:background="@null"
+                    android:inputType="textEmailAddress"/>
+            </LinearLayout>
+
+
+                <LinearLayout
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical"
+                android:layout_width="325dp"
                 android:layout_height="wrap_content"
-                android:hint="Alamat"
-                android:layout_marginTop="10dp"
-                android:inputType="text"/>
+                android:orientation="horizontal"
+                android:background="@drawable/custom_edittext">
+                <ImageView
+                    android:layout_margin="10dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/gmail"/>
+                <EditText
+                    android:layout_margin="10dp"
+                    android:id="@+id/email"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:inputType="text"
+                    android:background="@null"/>
+            </LinearLayout>
 
-
-
-            <EditText
-                android:id="@+id/ket"
-                android:layout_width="300dp"
+            <LinearLayout
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical"
+                android:layout_width="325dp"
                 android:layout_height="wrap_content"
-                android:hint="Keterangan"
-                android:inputType="text"/>
+                android:orientation="horizontal"
+                android:background="@drawable/custom_edittext">
+                <ImageView
+                    android:layout_margin="10dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/maps"/>
+                <EditText
+                    android:layout_margin="10dp"
+                    android:id="@+id/alamat"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Alamat"
+                    android:inputType="text"
+                    android:background="@null"/>
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/tambah"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:text="TAMBAH"
-                android:textStyle="bold"
-                android:textColor="#fff"
-                android:background="@drawable/custom_button"/>
 
-        </LinearLayout>
+
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <Button
+            android:layout_marginTop="-40dp"
+            android:id="@+id/tambah"
+            android:layout_below="@id/cardform"
+            android:layout_centerHorizontal="true"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="TAMBAH"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:background="@drawable/custom_button"/>
+        </RelativeLayout>
     </ScrollView>
 
 </RelativeLayout>

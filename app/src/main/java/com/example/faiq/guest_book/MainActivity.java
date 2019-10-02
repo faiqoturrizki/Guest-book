@@ -47,12 +47,12 @@ public class MainActivity extends AppCompatActivity {
                 senddata();
             }
         });
-        {
 
-        }
     }
 
     private void senddata() {
+        Toast.makeText(MainActivity.this,"Klik",Toast.LENGTH_SHORT).show();
+
         String nama, email, alamat, tanggal, keterangan;
         nama = etnama.getText().toString();
         email = etemail.getText().toString();
@@ -70,11 +70,15 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }
+                else {
+                    Toast.makeText(MainActivity.this,"Gagal",Toast.LENGTH_SHORT).show();
+
+                }
             }
 
             @Override
             public void onFailure(Call<Tamu> call, Throwable t) {
-
+                Toast.makeText(MainActivity.this,t.toString(),Toast.LENGTH_SHORT).show();
             }
         });
     }

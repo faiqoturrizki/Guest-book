@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FinishActivity"
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/custom_background">
@@ -13,13 +12,13 @@
         android:id="@+id/done"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/deal"/>
+        android:src="@drawable/library"/>
 
     <TextView
         android:id="@+id/tvdone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Berhasil Ditambahkan"
+        android:text="Guest Book"
         android:textSize="30sp"
         android:textColor="@color/putih"
         android:layout_marginTop="20dp"
